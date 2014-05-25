@@ -1,19 +1,6 @@
-music_duel_environment: &music_duel_environment
+default: &default
   adapter: postgresql
   encoding: unicode
-  pool: 5 
-
-development:
-  database: music_duel_dev
-  host: localhost
-  SLOT_DB_PORT: 3306
-  <<: *music_duel_environment
-
-test:
-  database: music_duel_test
-  host: localhost
-  SLOT_DB_PORT: 3306
-  <<: *music_duel_environment
-
-production:
-  <<: *music_duel_environment
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
