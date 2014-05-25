@@ -1,29 +1,22 @@
 music_duel_environment: &music_duel_environment
-  adapter: mysql2
-  encoding: utf8
-  pool: 5
- 
+  adapter: postgresql
+  encoding: unicode
+  username: music
+  password: duel
+  pool: 5 
 
 development:
   database: music_duel_dev
   host: localhost
   SLOT_DB_PORT: 3306
-  username: music
-  password: duel
   <<: *music_duel_environment
 
 test:
   database: music_duel_test
   host: localhost
   SLOT_DB_PORT: 3306
-  username: music
-  password: duel
   <<: *music_duel_environment
 
 production:
-  database: d4rvnd4h0kjb37
-  username: d7rck8mjp8ornc
-  password: PLzjhlZAJ-bg1gtvk2ywz5meyF
-  host: ec2-107-20-191-205.compute-1.amazonaws.com
-  port: 5432
+  database: music_duel_prod
   <<: *music_duel_environment
