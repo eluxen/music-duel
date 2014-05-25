@@ -16,7 +16,7 @@
 </p>
 <p>
   <strong>Tags:</strong>
-  <%= raw @artist.tag_list,map { |t| link_to t, tag_path(t) }.join(', ') %>
+  <%= raw @artist.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
 </p>
 
 <%= link_to 'Edit', edit_artist_path(@artist) %> |

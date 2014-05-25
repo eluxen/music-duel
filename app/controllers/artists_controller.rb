@@ -1,10 +1,16 @@
 class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show, :edit, :update, :destroy]
+  autocomplete :tag, :name, class_name: 'ActAsTaggableOn::Tag', :full => true
+
 
   # GET /artists
   # GET /artists.json
   def index
-    @artists = Artist.all
+    if params[:tag]
+      @artists = Artist.tagged_with(params[:tag])
+    else
+      @artists = Artist.all
+    end
   end
 
   # GET /artists/1

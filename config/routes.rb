@@ -1,5 +1,9 @@
 MusicDuel::Application.routes.draw do
-  resources :artists#, only: [:index, :show, :create]
+  resources :artists do#, only: [:index, :show, :create]
+    get :autocomplete_tag_name, on: :collection 
+  end
+  get 'tags/:tag', to: 'artists#index', as: :tag 
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
