@@ -1,25 +1,29 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
-development:
-  adapter: sqlite3
-  database: db/development.sqlite3
+music_duel_environment: &music_duel_environment
+  adapter: mysql2
+  encoding: utf8
   pool: 5
-  timeout: 5000
+ 
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
+development:
+  database: music_duel_dev
+  host: localhost
+  SLOT_DB_PORT: 3306
+  username: music
+  password: duel
+  <<: *music_duel_environment
+
 test:
-  adapter: sqlite3
-  database: db/test.sqlite3
-  pool: 5
-  timeout: 5000
+  database: music_duel_test
+  host: localhost
+  SLOT_DB_PORT: 3306
+  username: music
+  password: duel
+  <<: *music_duel_environment
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+  database: d4rvnd4h0kjb37
+  username: d7rck8mjp8ornc
+  password: PLzjhlZAJ-bg1gtvk2ywz5meyF
+  host: ec2-107-20-191-205.compute-1.amazonaws.com
+  port: 5432
+  <<: *music_duel_environment

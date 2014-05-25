@@ -7,12 +7,12 @@
 
 <p>
   <strong>Default vidio:</strong>
-  <%= @artist.default_song_url %>
+  <%= link_to @artist.default_song_url, @artist.default_song_url %>
 </p>
 
 <p>
   <strong>Profile photo url:</strong>
-  <%= @artist.profile_photo_url %>
+  <%= link_to @artist.profile_photo_url, @artist.profile_photo_url %>
 </p>
 <p>
   <strong>Tags:</strong>

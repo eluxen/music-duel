@@ -16,8 +16,8 @@
     <% @artists.each do |artist| %>
       <tr>
         <td><%= artist.name %></td>
-        <td><%= artist.default_song_url %></td>
-        <td><%= artist.profile_photo_url %></td>
+        <td><%= link_to artist.default_song_url, artist.default_song_url %></td>
+        <td><%= link_to artist.profile_photo_url, artist.profile_photo_url %></td>
         <td><%= link_to 'Show', artist %></td>
         <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
         <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,0 +1,2 @@
+UPDATE mysql.user SET Password=PASSWORD('Luxi1234') WHERE User='root';
+FLUSH PRIVILEGES;
