@@ -2,10 +2,10 @@
 
 one:
   name: MyString
-  default_vidio: MyString
+  default_song_url: MyString
   profile_photo_url: MyString
 
 two:
   name: MyString
-  default_vidio: MyString
+  default_song_url: MyString
   profile_photo_url: MyString

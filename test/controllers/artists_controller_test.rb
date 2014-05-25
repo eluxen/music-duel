@@ -18,7 +18,7 @@ class ArtistsControllerTest < ActionController::TestCase
 
   test "should create artist" do
     assert_difference('Artist.count') do
-      post :create, artist: { default_vidio: @artist.default_vidio, name: @artist.name, profile_photo_url: @artist.profile_photo_url }
+      post :create, artist: { default_song_url: @artist.default_song_url, name: @artist.name, profile_photo_url: @artist.profile_photo_url }
     end
 
     assert_redirected_to artist_path(assigns(:artist))
@@ -35,7 +35,7 @@ class ArtistsControllerTest < ActionController::TestCase
   end
 
   test "should update artist" do
-    patch :update, id: @artist, artist: { default_vidio: @artist.default_vidio, name: @artist.name, profile_photo_url: @artist.profile_photo_url }
+    patch :update, id: @artist, artist: { default_song_url: @artist.default_song_url, name: @artist.name, profile_photo_url: @artist.profile_photo_url }
     assert_redirected_to artist_path(assigns(:artist))
   end
 

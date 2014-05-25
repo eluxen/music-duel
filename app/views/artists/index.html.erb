@@ -4,8 +4,8 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Default vidio</th>
-      <th>Profile photo url</th>
+      <th>Default Song Url</th>
+      <th>Profile Photo Url</th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,7 +16,7 @@
     <% @artists.each do |artist| %>
       <tr>
         <td><%= artist.name %></td>
-        <td><%= artist.default_vidio %></td>
+        <td><%= artist.default_song_url %></td>
         <td><%= artist.profile_photo_url %></td>
         <td><%= link_to 'Show', artist %></td>
         <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
