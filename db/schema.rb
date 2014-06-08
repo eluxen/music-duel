@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140608123825) do
+ActiveRecord::Schema.define(version: 20140608125515) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
@@ -48,5 +48,17 @@ ActiveRecord::Schema.define(version: 20140608123825) do
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true
+
+  create_table "votes", force: true do |t|
+    t.integer  "duel_id"
+    t.integer  "artist_id"
+    t.string   "username"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "votes", ["artist_id"], name: "index_votes_on_artist_id"
+  add_index "votes", ["duel_id", "username"], name: "index_votes_on_duel_id_and_username", unique: true
+  add_index "votes", ["duel_id"], name: "index_votes_on_duel_id"
 
 end

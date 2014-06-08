@@ -11,7 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.ui.all
 //= require jquery_ujs
 //= require autocomplete-rails
+//= require bootstrap
+//= require moment
+//= require bootstrap-datetimepicker
 //= require turbolinks
 //= require_tree .

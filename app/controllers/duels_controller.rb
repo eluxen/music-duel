@@ -1,6 +1,8 @@
 class DuelsController < ApplicationController
   before_action :set_duel, only: [:show, :edit, :update, :destroy]
 
+  autocomplete :artist, :name, full: true
+
   # GET /duels
   # GET /duels.json
   def index
@@ -17,8 +19,19 @@ class DuelsController < ApplicationController
     @duel = Duel.new
   end
 
-  # GET /duels/1/edit
   def edit
+  end
+
+   def update
+    respond_to do |format|
+      if @duel.update(duel_params)
+        format.html { redirect_to @duel, notice: 'Duel was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @duel.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # POST /duels
@@ -37,20 +50,6 @@ class DuelsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /duels/1
-  # PATCH/PUT /duels/1.json
-  def update
-    respond_to do |format|
-      if @duel.update(duel_params)
-        format.html { redirect_to @duel, notice: 'Duel was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @duel.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   # DELETE /duels/1
   # DELETE /duels/1.json
   def destroy
@@ -62,13 +61,14 @@ class DuelsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_duel
-      @duel = Duel.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_duel
+    @duel = Duel.find(params[:id])
+  end
+ 
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def duel_params
-      params.require(:duel).permit(:deadline, :description, :artist_a, :artist_b)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def duel_params
+    params.require(:duel).permit(:deadline, :description, :artist_a_id, :artist_b_id)
+  end
 end

@@ -1,6 +1,8 @@
+require 'acts-as-taggable-on'
+
 class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show, :edit, :update, :destroy]
-  autocomplete :tag, :name, class_name: 'ActAsTaggableOn::Tag', :full => true
+  autocomplete :tag, :name, class_name: 'ActsAsTaggableOn::Tag', :full => true
 
 
   # GET /artists

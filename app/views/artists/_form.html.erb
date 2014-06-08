@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :tag_list, "Tags (separated by commas)" %><br>
-    <%= f.autocomplete_field :tag_list, autocomplete_tag_name_artists_path, 'data-delimiter' => ','%>
+    <%= f.autocomplete_field :tag_list, autocomplete_tag_name_artists_path, 'data-delimiter' => ',', :data => { :no_matches_label => '' } %>
   </div>
   <div class="actions">
     <%= f.submit %>

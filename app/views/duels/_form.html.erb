@@ -13,11 +13,22 @@
 
   <div class="field">
     <%= f.label :deadline %><br>
-    <%= f.text_field :deadline %>
+    <%= f.text_field(:deadline, {class: "form-control", 'data-date-format' => "DD/MM/YYYY hh:mm"}) %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :artist_a %><br>
+    <%= f.hidden_field :artist_a_id %>
+    <%= f.autocomplete_field :artist_a_name, autocomplete_artist_name_duels_path, id_element: '#duel_artist_a_id' %>
+
+  </div>
+  <div class="field">
+    <%= f.label :artist_b %><br>
+    <%= f.hidden_field :artist_b_id %>
+    <%= f.autocomplete_field :artist_b_name, autocomplete_artist_name_duels_path, id_element: '#duel_artist_b_id' %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -10,5 +10,12 @@
   <%= @duel.description %>
 </p>
 
+<p>
+  <%= link_to @duel.artist_a.name, artist_path(@duel.artist_a) %>
+</p>
+<p>
+  <%= link_to @duel.artist_b.name, artist_path(@duel.artist_b) %>
+</p>
+
 <%= link_to 'Edit', edit_duel_path(@duel) %> |
 <%= link_to 'Back', duels_path %>
