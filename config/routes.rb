@@ -1,4 +1,6 @@
 MusicDuel::Application.routes.draw do
+  resources :duels
+
   resources :artists do#, only: [:index, :show, :create]
     get :autocomplete_tag_name, on: :collection 
   end

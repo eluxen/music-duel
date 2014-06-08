@@ -1,0 +1,29 @@
+<h1>Listing duels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Deadline</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @duels.each do |duel| %>
+      <tr>
+        <td><%= duel.deadline %></td>
+        <td><%= duel.description %></td>
+        <td><%= link_to 'Show', duel %></td>
+        <td><%= link_to 'Edit', edit_duel_path(duel) %></td>
+        <td><%= link_to 'Destroy', duel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Duel', new_duel_path %>

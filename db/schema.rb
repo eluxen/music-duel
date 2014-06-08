@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140525125236) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 20140608123825) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
@@ -22,6 +19,15 @@ ActiveRecord::Schema.define(version: 20140525125236) do
     t.string   "profile_photo_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "duels", force: true do |t|
+    t.datetime "deadline"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "artist_a_id"
+    t.integer  "artist_b_id"
   end
 
   create_table "taggings", force: true do |t|
@@ -34,13 +40,13 @@ ActiveRecord::Schema.define(version: 20140525125236) do
     t.datetime "created_at"
   end
 
-  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
 
   create_table "tags", force: true do |t|
     t.string  "name"
     t.integer "taggings_count", default: 0
   end
 
-  add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
 
 end
