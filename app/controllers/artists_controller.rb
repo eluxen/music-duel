@@ -3,8 +3,7 @@ require 'acts-as-taggable-on'
 class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show, :edit, :update, :destroy]
   autocomplete :tag, :name, class_name: 'ActsAsTaggableOn::Tag', :full => true
-
-
+  before_action :role_required
   # GET /artists
   # GET /artists.json
   def index
@@ -70,13 +69,13 @@ class ArtistsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_artist
-      @artist = Artist.find(params[:id])
-    end
+  
+  def set_artist
+    @artist = Artist.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def artist_params
-      params.require(:artist).permit(:name, :default_song_url, :profile_photo_url, :tag_list)
-    end
+  def artist_params
+    params.require(:artist).permit(:name, :default_song_url, :profile_photo_url, :tag_list)
+  end
+  
 end

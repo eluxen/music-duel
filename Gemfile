@@ -21,6 +21,7 @@ gem 'google-api-client', :require => 'google/api_client'
 gem 'omniauth-google-oauth2'
 gem 'haml'
 gem 'haml-rails'
+gem 'the_role', :github => 'the-teacher/the_role'
 
 group :develop do
   gem 'sqlite3'

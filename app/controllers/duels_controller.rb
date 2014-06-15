@@ -1,6 +1,7 @@
 class DuelsController < ApplicationController
   before_action :set_duel, only: [:show, :edit, :update, :destroy]
   before_action :login_required
+  before_action :role_required,  except: [:show]
 
   autocomplete :artist, :name, full: true
 
@@ -56,6 +57,7 @@ class DuelsController < ApplicationController
 
   def set_duel
     @duel = Duel.find(params[:id])
+     @owner_check_object = @duel
   end
 
   def duel_params

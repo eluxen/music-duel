@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
+  include TheRole::Controller
+
   protect_from_forgery with: :exception
   
   helper_method :current_user
@@ -13,14 +13,12 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
-  # alias_method :role_access_denied, :access_denied
-  
-  # def access_denied
-  #   flash[:alert] = 'You are not authorized to view this page!'
-  #   redirect_to_back_or_default
-  # end
+  def access_denied
+    flash[:alert] = 'You are not authorized to view this page!'
+    redirect_to_back_or_default
+  end
 
-  def redirect_to_back_or_default(default = root_url)
+  def redirect_to_back_or_default(default = Duel.last)
     if request.env["HTTP_REFERER"].present? and request.env["HTTP_REFERER"] != request.env["REQUEST_URI"]
       redirect_to :back
     else

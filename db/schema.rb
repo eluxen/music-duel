@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140615133032) do
+ActiveRecord::Schema.define(version: 20140615151229) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 20140615133032) do
     t.datetime "updated_at"
     t.integer  "artist_a_id"
     t.integer  "artist_b_id"
+  end
+
+  create_table "roles", force: true do |t|
+    t.string   "name",        null: false
+    t.string   "title",       null: false
+    t.text     "description", null: false
+    t.text     "the_role",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "taggings", force: true do |t|
@@ -61,18 +70,19 @@ ActiveRecord::Schema.define(version: 20140615133032) do
     t.datetime "expires"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "role_id"
   end
 
   create_table "votes", force: true do |t|
     t.integer  "duel_id"
     t.integer  "artist_id"
-    t.string   "username"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   add_index "votes", ["artist_id"], name: "index_votes_on_artist_id"
-  add_index "votes", ["duel_id", "username"], name: "index_votes_on_duel_id_and_username", unique: true
   add_index "votes", ["duel_id"], name: "index_votes_on_duel_id"
+  add_index "votes", ["duel_id"], name: "index_votes_on_duel_id_and_username", unique: true
 
 end

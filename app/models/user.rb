@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
-
-   validates_uniqueness_of :uid, scope: :provider
+  include TheRole::User
+  
+  validates_uniqueness_of :uid, scope: :provider
 
   def self.from_auth(auth)
    where(provider: auth["provider"], uid: auth["uid"]).first

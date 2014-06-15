@@ -2,6 +2,7 @@ class VotesController < ApplicationController
   before_action :set_duel
   before_action :set_vote, only: :update
   before_action :login_required
+  before_action :owner_required
 
   # POST /votes
   # POST /votes.json
@@ -41,9 +42,10 @@ class VotesController < ApplicationController
 
   def set_vote
     @vote = Vote.find(params[:id])
+    @owner_check_object = @vote
   end
 
   def vote_params
-    params.require(:vote).permit(:duel_id, :artist_id, :username)
+    params.require(:vote).permit(:duel_id, :artist_id, :user_id)
   end
 end

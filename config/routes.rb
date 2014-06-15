@@ -13,4 +13,10 @@ MusicDuel::Application.routes.draw do
   match '/auth/:provider/callback' => 'sessions#create', via: %i(get post)
   match '/logout'                  => 'sessions#destroy', via: %i(get delete), as: :logout
   match '/login'                   => 'sessions#new', via: %i(get), as: :login
+
+  concern :the_role, TheRole::AdminRoutes.new
+
+  namespace :admin do
+    concerns :the_role
+  end
 end
