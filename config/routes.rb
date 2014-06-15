@@ -7,5 +7,10 @@ MusicDuel::Application.routes.draw do
   resources :artists do#, only: [:index, :show, :create, :update]
     get :autocomplete_tag_name, on: :collection 
   end
+ 
   get 'tags/:tag', to: 'artists#index', as: :tag 
+
+  match '/auth/:provider/callback' => 'sessions#create', via: %i(get post)
+  match '/logout'                  => 'sessions#destroy', via: %i(get delete), as: :logout
+  match '/login'                   => 'sessions#new', via: %i(get), as: :login
 end

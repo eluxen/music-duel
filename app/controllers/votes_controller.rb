@@ -1,6 +1,7 @@
 class VotesController < ApplicationController
   before_action :set_duel
-  before_action :set_vote, only: [:show, :edit, :update, :destroy]
+  before_action :set_vote, only: :update
+  before_action :login_required
 
   # POST /votes
   # POST /votes.json

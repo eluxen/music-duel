@@ -12,6 +12,7 @@
  *= require jquery.ui.all
  *= require bootstrap
  *= require bootstrap-datetimepicker
+*= require app
  *= require_tree .
  */
 @import 'bootstrap';

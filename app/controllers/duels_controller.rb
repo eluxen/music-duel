@@ -1,20 +1,16 @@
 class DuelsController < ApplicationController
   before_action :set_duel, only: [:show, :edit, :update, :destroy]
+  before_action :login_required
 
   autocomplete :artist, :name, full: true
 
-  # GET /duels
-  # GET /duels.json
   def index
     @duels = Duel.all
   end
 
-  # GET /duels/1
-  # GET /duels/1.json
   def show
   end
 
-  # GET /duels/new
   def new
     @duel = Duel.new
   end
@@ -34,8 +30,6 @@ class DuelsController < ApplicationController
     end
   end
 
-  # POST /duels
-  # POST /duels.json
   def create
     @duel = Duel.new(duel_params)
 
@@ -50,8 +44,6 @@ class DuelsController < ApplicationController
     end
   end
 
-  # DELETE /duels/1
-  # DELETE /duels/1.json
   def destroy
     @duel.destroy
     respond_to do |format|
@@ -61,13 +53,11 @@ class DuelsController < ApplicationController
   end
 
   private
-  # Use callbacks to share common setup or constraints between actions.
+
   def set_duel
     @duel = Duel.find(params[:id])
   end
- 
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def duel_params
     params.require(:duel).permit(:deadline, :description, :artist_a_id, :artist_b_id)
   end
