@@ -10,12 +10,21 @@
   <%= @duel.description %>
 </p>
 
-<p>
-  <%= link_to @duel.artist_a.name, artist_path(@duel.artist_a) %>
-</p>
-<p>
-  <%= link_to @duel.artist_b.name, artist_path(@duel.artist_b) %>
-</p>
-
-<%= link_to 'Edit', edit_duel_path(@duel) %> |
-<%= link_to 'Back', duels_path %>
+<div id='duel_options'>
+  <div class='left option'>
+    <p>
+      <%= link_to @duel.artist_a.name, artist_path(@duel.artist_a) %>
+    </p>
+    <div class='vote'>
+      <%= button_to "Vote", {controller: 'votes', action: 'create', duel_id: @duel.id, artist_id: @duel.artist_a.id, user_id: session[:user_id]}, :class => "button", :method => :post %>
+    </div>
+  </div>
+  <div class='right option'>
+    <p>
+      <%= link_to @duel.artist_b.name, artist_path(@duel.artist_b) %>
+    </p>
+    <div class='vote'>
+      <%= button_to "Vote", {controller: 'votes', action: 'create', duel_id: @duel.id, artist_id: @duel.artist_b.id, user_id: session[:user_id]}, :class => "button", :method => :post %>
+    </div>
+  </div>
+</div>
