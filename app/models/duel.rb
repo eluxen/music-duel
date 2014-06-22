@@ -5,7 +5,6 @@ class Duel < ActiveRecord::Base
 
   validates :artist_a, :artist_b, presence: true
 
-
   def artist_a_name
     artist_a.name if artist_a
   end
@@ -17,7 +16,11 @@ class Duel < ActiveRecord::Base
   def artist_a_name=(name)
     self.artist_a.name = Artist.find_by(name: name) unless name.blank?
   end
+
   def artist_b_name=(name)
     self.artist_b.name = Artist.find_by(name: name) unless name.blank?
+  end
+
+  def voted?
   end
 end

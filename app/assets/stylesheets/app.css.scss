@@ -43,3 +43,30 @@
   padding: 15px;
   margin: 0 auto;
 }
+
+#wrap {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -60px;
+  padding: 0 0 60px;
+}
+
+#wrap > .container {
+  padding: 110px 15px 0;
+}
+
+.left {
+  position: absolute; 
+  top: 0;
+  left: 0;
+}
+
+.right {
+  position: absolute; 
+  top: 0;
+  left: auto;
+  right: 0;
+}
+.center {
+  margin: 0 auto;
+}

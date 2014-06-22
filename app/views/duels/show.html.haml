@@ -1,0 +1,17 @@
+#duel_container
+  #header
+    %h2 #{@duel.description}
+  #duel_options
+    %div.left.duel-option
+      = render 'artists/artist', artist: @duel.artist_a
+      - unless (Vote.for_duel(@duel, @current_user).any?)
+        .vote
+          = button_to "Vote", {controller: 'votes', action: 'create', duel_id: @duel.id, artist_id: @duel.artist_a.id, user_id: session[:user_id]}, :class => "button", :method => :post
+    %div.duel-bar
+      %span.orange{style:"width:30%"} 30%
+      %span.blue{style:"width:70%"} 70%
+    %div.right.duel-option
+      = render 'artists/artist', artist: @duel.artist_b
+      - unless (Vote.for_duel(@duel, @current_user).any?)
+        .vote
+          = button_to "Vote", {controller: 'votes', action: 'create', duel_id: @duel.id, artist_id: @duel.artist_b.id, user_id: session[:user_id]}, :class => "button", :method => :post

@@ -10,4 +10,7 @@
                     useSeconds: false,
                     showTimePicker: true
                 )
+
+  $('.button').submit ->
+                  alert('yey')
             

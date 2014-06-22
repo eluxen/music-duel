@@ -1,3 +1,64 @@
 // Place all the styles related to the Duels controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#duel_container {
+  #header {
+    text-align: center;
+  }
+
+  #duel_options {
+    position: relative;
+
+    &:after {
+      content: "";
+      clear: both;
+    }
+    .duel-option {
+      width: 35%;
+      
+      .vote {
+        width: 15%;
+        margin: 1em auto;
+
+        input {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+.container {
+  // background-image: image-url("mortal_combat_background.jpg");
+}
+.duel-bar {
+  background-color: #1a1a1a;
+  height: 35px;
+  padding: 5px;
+  width: 350px;
+  margin: 50px 0;         
+  border-radius: 5px;
+  box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;           
+  margin-top: 400px;
+  float: left;
+
+  span {
+    display: inline-block;
+    float: left;
+    height: 100%;
+    border-radius: 0;
+    box-shadow: 0 3px 3px rgba(255, 255, 255, .7) inset, 0 -3px 3px rgba(255, 255, 255, .7) inset;    
+    transition: width .4s ease-in-out;    
+    text-align: center;
+    color: white;
+    padding-top: 3px;
+
+  }
+  .orange {
+    background-color: #fecf23;
+  }
+  .blue {
+    background-color: #34c2e3;   
+  }
+}
+

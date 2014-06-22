@@ -1,0 +1,8 @@
+#artist_container
+  #artist_header
+    .photo
+      = link_to(image_tag(artist.profile_photo_url), artist.profile_photo_url) 
+    .name
+      = link_to artist.name, google_search(artist.name)
+  #artist_song
+    %iframe{src: artist.default_song_url, allowfullscreen: true}

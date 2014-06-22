@@ -13,12 +13,7 @@ class ArtistsController < ApplicationController
       @artists = Artist.all
     end
   end
-
-  # GET /artists/1
-  # GET /artists/1.json
-  def show
-  end
-
+  
   # GET /artists/new
   def new
     @artist = Artist.new
@@ -35,7 +30,7 @@ class ArtistsController < ApplicationController
 
     respond_to do |format|
       if @artist.save
-        format.html { redirect_to @artist, notice: 'Artist was successfully created.' }
+        format.html { redirect_to artists_path, notice: 'Artist was successfully created.' }
         format.json { render action: 'show', status: :created, location: @artist }
       else
         format.html { render action: 'new' }
@@ -49,7 +44,7 @@ class ArtistsController < ApplicationController
   def update
     respond_to do |format|
       if @artist.update(artist_params)
-        format.html { redirect_to @artist, notice: 'Artist was successfully updated.' }
+        format.html { redirect_to artists_path, notice: 'Artist was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

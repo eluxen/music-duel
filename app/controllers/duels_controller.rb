@@ -22,7 +22,7 @@ class DuelsController < ApplicationController
    def update
     respond_to do |format|
       if @duel.update(duel_params)
-        format.html { redirect_to @duel, notice: 'Duel was successfully updated.' }
+        format.html { redirect_to duels_path, notice: 'Duel was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

@@ -1,0 +1,25 @@
+#main-header.navbar.navbar-default.navbar-fixed-top{role: "navigation"}
+  .container
+    .navbar-header
+      %button.navbar-toggle.collapsed{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+    - if current_user
+      .navbar-collapse.collapse{style: "height: 1px;"}
+        %ul.nav.navbar-nav.navbar-left
+          = render 'shared/user_links'
+
+          - if current_user.admin?
+            = render 'shared/admin_links'
+
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            %h1= Time.now.strftime('%B %d, %Y')
+          %li.pink
+            = link_to logout_path do
+              %i.fa.fa-sign-out.fa-3x
+              %p Sign Out
+          %li.pink
+            = image_tag current_user.image || "http://lorempixel.com/100/100/cats/", :size => "70x70", :class => "img-rounded"

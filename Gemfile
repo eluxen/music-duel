@@ -22,6 +22,7 @@ gem 'omniauth-google-oauth2'
 gem 'haml'
 gem 'haml-rails'
 gem 'the_role', :github => 'the-teacher/the_role'
+gem 'css3buttons'
 
 group :develop do
   gem 'sqlite3'
