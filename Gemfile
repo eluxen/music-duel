@@ -27,7 +27,7 @@ group :production do
   gem 'pg'
 end
 
-group :develop do
+group :development do
   gem 'sqlite3'
   gem 'pry-rails'
 end
