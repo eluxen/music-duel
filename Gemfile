@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
 
-gem 'pg'
 gem 'sass-rails', '~> 4.0.2'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -23,6 +22,10 @@ gem 'haml'
 gem 'haml-rails'
 gem 'the_role', :github => 'the-teacher/the_role'
 gem 'css3buttons'
+
+group :production do
+  gem 'pg'
+end
 
 group :develop do
   gem 'sqlite3'
