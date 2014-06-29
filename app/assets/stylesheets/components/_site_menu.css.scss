@@ -16,6 +16,12 @@
 
   .orenge {
     background-color: $orenge;
+    margin: 0 5px;
+    text-align: center;
+
+     a {
+      color: white;
+    }
 
     &.open > a {
       background-color: $orenge;
@@ -23,7 +29,13 @@
   }
 
   .green {
+    margin: 0 5px;
+    text-align: center;
     background-color: $green;
+
+     a {
+      color: white;
+    }
 
     &.open > a {
       background-color: $green;
