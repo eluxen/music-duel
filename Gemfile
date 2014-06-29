@@ -30,6 +30,7 @@ end
 group :development do
   gem 'sqlite3'
   gem 'pry-rails'
+  gem 'debugger'
 end
 
 group :doc do
