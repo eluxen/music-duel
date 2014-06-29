@@ -5,7 +5,6 @@
     <tr>
       <th>Name</th>
       <th>Default Song Url</th>
-      <th>Profile Photo Url</th>
       <th></th>
     </tr>
   </thead>
@@ -15,10 +14,9 @@
       <tr>
         <td><%= artist.name %></td>
         <td><%= link_to artist.default_song_url, artist.default_song_url %></td>
-        <td><%= link_to artist.profile_photo_url, artist.profile_photo_url %></td>
         <td> <%= button_group do %>
           <%= edit_pill_button_link_to 'Edit', edit_artist_path(artist) %>
-          <%= remove_pill_negative_button_link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= remove_pill_negative_button_link_to 'Delete', artist, method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %> </td>
       </tr>
     <% end %>
@@ -28,3 +26,4 @@
 <br>
 
 <%= add_button_link_to 'New Artist', new_artist_path %>
+<%= button_link_to 'Manage Duels', duels_path %>

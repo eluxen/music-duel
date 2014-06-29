@@ -70,7 +70,7 @@ class ArtistsController < ApplicationController
   end
 
   def artist_params
-    params.require(:artist).permit(:name, :default_song_url, :profile_photo_url, :tag_list)
+    params.require(:artist).permit(:name, :default_song_url, :tag_list)
   end
   
 end

@@ -12,6 +12,11 @@ class DuelsController < ApplicationController
   def show
   end
 
+  def latest
+    @duel = Duel.last
+    render action: 'show'
+  end
+
   def new
     @duel = Duel.new
   end
@@ -19,45 +24,35 @@ class DuelsController < ApplicationController
   def edit
   end
 
-   def update
-    respond_to do |format|
-      if @duel.update(duel_params)
-        format.html { redirect_to duels_path, notice: 'Duel was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @duel.errors, status: :unprocessable_entity }
-      end
+  def update
+    if @duel.update(duel_params)
+      redirect_to duels_path, notice: 'Duel was successfully updated.'
+    else
+      render action: 'edit'
     end
   end
 
   def create
     @duel = Duel.new(duel_params)
 
-    respond_to do |format|
-      if @duel.save
-        format.html { redirect_to @duel, notice: 'Duel was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @duel }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @duel.errors, status: :unprocessable_entity }
-      end
+    if @duel.save
+      redirect_to @duel, notice: 'Duel was successfully created.'
+    else
+      render action: 'new'
+      
     end
   end
 
   def destroy
     @duel.destroy
-    respond_to do |format|
-      format.html { redirect_to duels_url }
-      format.json { head :no_content }
-    end
+    redirect_to duels_url
   end
 
   private
 
   def set_duel
     @duel = Duel.find(params[:id])
-     @owner_check_object = @duel
+    @owner_check_object = @duel
   end
 
   def duel_params

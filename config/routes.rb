@@ -1,4 +1,5 @@
 MusicDuel::Application.routes.draw do
+  root :to => 'duels#latest'
   resources :duels do 
     resources :votes, only: [:create, :update]
     get :autocomplete_artist_name, on: :collection

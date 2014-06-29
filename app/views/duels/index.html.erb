@@ -17,7 +17,7 @@
         <td><%= button_group do %>
           <%= pill_button_link_to 'Show', duel %>
           <%= edit_pill_button_link_to 'Edit', edit_duel_path(duel) %>
-          <%= remove_negative_pill_button_link_to 'Destroy', duel, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= remove_negative_pill_button_link_to 'Delete', duel, method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %></td>
       </tr>
     <% end %>
@@ -27,3 +27,5 @@
 <br>
 
 <%= add_button_link_to 'New Duel', new_duel_path %>
+<%= button_link_to 'Manage Artists', artists_path %>
+
