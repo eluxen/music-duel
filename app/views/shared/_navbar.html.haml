@@ -22,4 +22,5 @@
               %i.fa.fa-sign-out.fa-3x
               %p Sign Out
           %li.pink
-            = image_tag current_user.image || "http://lorempixel.com/100/100/cats/", :size => "70x70", :class => "img-rounded"
+            %div
+              = image_tag current_user.image || "http://lorempixel.com/100/100/cats/", :size => "70x70", :class => "img-rounded"

@@ -74,6 +74,8 @@ GEM
     extlib (0.9.16)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
+    font-awesome-rails (4.1.0.0)
+      railties (>= 3.2, < 5.0)
     google-api-client (0.7.1)
       addressable (>= 2.3.2)
       autoparse (>= 0.3.3)
@@ -220,6 +222,7 @@ DEPENDENCIES
   css3buttons
   debugger
   dotenv-rails
+  font-awesome-rails
   google-api-client
   haml
   haml-rails
