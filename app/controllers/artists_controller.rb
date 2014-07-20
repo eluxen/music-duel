@@ -9,6 +9,7 @@ class ArtistsController < ApplicationController
     if params[:tag]
       @artists = Artist.tagged_with(params[:tag])
     else
+      binding.pry
       @artists = Artist.all
     end
   end

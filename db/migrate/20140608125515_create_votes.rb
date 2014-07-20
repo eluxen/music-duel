@@ -7,7 +7,5 @@ class CreateVotes < ActiveRecord::Migration
 
       t.timestamps
     end
-
-    add_index :votes, [:duel_id, :username], unique: true
   end
 end

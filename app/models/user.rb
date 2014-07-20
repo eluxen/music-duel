@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :votes
   include TheRole::User
   
   validates_uniqueness_of :uid, scope: :provider

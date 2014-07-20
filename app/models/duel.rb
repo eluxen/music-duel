@@ -23,4 +23,12 @@ class Duel < ActiveRecord::Base
 
   def voted?
   end
+
+  def artist_a_voters
+    votes.where(artist_id: artist_a.id)
+  end
+
+  def artist_b_voters
+    votes.where(artist_id: artist_b.id)
+  end
 end
