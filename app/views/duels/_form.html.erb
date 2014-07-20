@@ -13,7 +13,11 @@
 
   <div class="field">
     <%= f.label :deadline %><br>
-    <%= f.text_field(:deadline, {class: "form-control", 'data-date-format' => "DD/MM/YYYY HH:mm"}) %>
+    <div class='input-group date' id='dead-line-picker' data-date-format= "DD/MM/YYYY HH:mm">
+     <%= f.text_field(:deadline, {class: "form-control"}) %>
+     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+    </div>
   </div>
   <div class="field">
     <%= f.label :description %><br>
@@ -22,7 +26,7 @@
   <div class="field">
     <%= f.label :artist_a %><br>
     <%= f.hidden_field :artist_a_id %>
-    <%= f.autocomplete_field :artist_a_name, autocomplete_artist_name_duels_path, id_element: '#duel_artist_a_id' %>
+    <%= f.autocomplete_field :artist_a_name, autocomplete_artist_name_duels_path, id_element: '#duel_artist_a_id', 'data-auto-focus' => true %>
 
   </div>
   <div class="field">

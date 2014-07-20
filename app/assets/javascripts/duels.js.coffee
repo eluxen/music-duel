@@ -1,8 +1,10 @@
 
  $(document).ready ->
-                $('#duel_deadline').datetimepicker(
+                $('#dead-line-picker').datetimepicker(
                     todayHighlight: true,
                     useSeconds: false,
                     showTimePicker: true,
-                    sideBySide: true
+                    sideBySide: true,
+                    autoFocus: true
                 )
+              
