@@ -47,18 +47,9 @@ body {
   padding: 110px 15px 0;
 }
 
-.left {
-  position: absolute; 
-  top: 0;
-  left: 0;
-}
-
-.right {
-  position: absolute; 
-  top: 0;
-  left: auto;
-  right: 0;
-}
 .center {
   margin: 0 auto;
+}
+.main-section {
+  margin-top: 125px;
 }

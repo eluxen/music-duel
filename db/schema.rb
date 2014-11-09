@@ -82,4 +82,5 @@ ActiveRecord::Schema.define(version: 20140720141839) do
 
   add_index "votes", ["artist_id"], name: "index_votes_on_artist_id"
   add_index "votes", ["duel_id", "user_id"], name: "index_votes_on_duel_id_and_user_id", unique: true
+
 end

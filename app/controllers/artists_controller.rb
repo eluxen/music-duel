@@ -9,11 +9,10 @@ class ArtistsController < ApplicationController
     if params[:tag]
       @artists = Artist.tagged_with(params[:tag])
     else
-      binding.pry
       @artists = Artist.all
     end
   end
-  
+
   def new
     @artist = Artist.new
   end
@@ -35,7 +34,7 @@ class ArtistsController < ApplicationController
     if @artist.update(artist_params)
       redirect_to artists_path, notice: 'Artist was successfully updated.'
     else
-      render action: 'edit' 
+      render action: 'edit'
     end
   end
 
@@ -45,7 +44,7 @@ class ArtistsController < ApplicationController
   end
 
   private
-  
+
   def set_artist
     @artist = Artist.find(params[:id])
   end

@@ -9,11 +9,11 @@ class Artist < ActiveRecord::Base
 
   validates :name, presence: true, uniqueness: true
   validates_format_of :default_song_url, :with => /\A(http|https):\/\/(www\.)?youtube\.com(\/.*)?\z/ix, message: "%{value} is not a valid youtube video."
-  
+
   before_save :set_youtube_id
 
   def defualt_embedded_song_url
-    "http://www.youtube.com/embed/#{youtube_id}"
+    "http://www.youtube.com/embed/#{youtube_id}?rel=0&showinfo=0&controls=0"
   end
 
   def default_song_url
@@ -25,7 +25,7 @@ class Artist < ActiveRecord::Base
 
     first_param = params[params.keys.first].first
     unless (first_param.blank?)
-      self.youtube_id = params[params.keys.first].first 
+      self.youtube_id = params[params.keys.first].first
     else
       self.youtube_id = URI(@default_song_url).path.split('/').last
     end

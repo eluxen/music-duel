@@ -1,8 +1,2 @@
-#artist_container
-  #artist_header
-    .name
-      = link_to artist.name, google_search(artist.name)
-  #artist_song
-    %iframe{src: artist.defualt_embedded_song_url, allowfullscreen: true}
-  #voters
-    = render voters
+.artist_song
+  %iframe{src: artist.defualt_embedded_song_url}

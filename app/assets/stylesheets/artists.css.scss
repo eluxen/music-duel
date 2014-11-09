@@ -1,42 +1,7 @@
-// Place all the styles related to the Artists controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-#artist_header {
-  margin-bottom: 1em;
+.artist_song {
 
-  .photo {
-    float: left;
-    height: 12em;
-    width: 12em;
-    overflow:hidden;
-    position: relative;
-    
-    img {
-      margin-left: -5em;
-      z-index: 1;
-    }
-  }
-  .name {
-    vertical-align: middle;
-    float: left;
-    margin: 1em;
-    font-family: NeoSansStd-Regular;
-    font-size: 23px; 
-    line-height: 3em;
-
-  }
-
-  &:after {
-    content: "";
-    clear: both;
-    display:block;
-    height:0;
-    line-height:0;
-    visibility:hidden;
-  }
-}
-#artist_song {
-  video {
+  iframe {
     width: 100%;
+    min-height: 55em;
   }
 }
