@@ -1,6 +1,6 @@
 #main-header {
 
- background-color: $header-color;
+ background-color: $purple;
 
  li div {
   padding: 15px 15px;
@@ -28,17 +28,17 @@
     }
   }
 
-  .green {
+  .grey {
     margin: 0 5px;
     text-align: center;
-    background-color: $green;
+    background-color: rgba(100, 100, 100, 0.9);
 
      a {
       color: white;
     }
 
     &.open > a {
-      background-color: $green;
+      background-color: rgba(100, 100, 100, 0.9);
     }
   }
 

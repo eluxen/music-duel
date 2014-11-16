@@ -11,16 +11,18 @@
         %ul.nav.navbar-nav.navbar-left
           = render 'shared/user_links'
 
-          - if current_user.admin?
-            = render 'shared/admin_links'
+          / - if current_user.admin?
+          /   = render 'shared/admin_links'
+
+        %ul.nav.navbar-nav
+          %li
+            %h1= '00:53'
 
         %ul.nav.navbar-nav.navbar-right
-          %li
-            %h1= Time.now.strftime('%B %d, %Y')
-          %li.pink
+          %li.grey
             = link_to logout_path do
               %i.fa.fa-sign-out.fa-3x
               %p Sign Out
-          %li.pink
+          %li.grey
             %div
               = image_tag current_user.image || "http://lorempixel.com/100/100/cats/", :size => "70x70", :class => "img-rounded"
