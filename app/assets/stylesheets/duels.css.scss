@@ -12,8 +12,9 @@
   .vs-container {
     position: absolute;
     z-index: 9999;
-    width: 98%;
     height: 108px;
+    left: 45%;
+    width: 10%;
 
     .vs {
       position: relative;
@@ -26,6 +27,12 @@
       color: white;
       background-color: rgba(100, 100, 100, 0.9);
     }
+  }
+  .row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
   }
   .vote {
     background-color: $purple;//rgba(100, 100, 100, 0.2);
@@ -41,8 +48,17 @@
 
     }
   }
+  .voters {
+    text-align: left;
+    margin-bottom: 15px;
+  }
 }
 .ui-helper-hidden-accessible { display:none; }
 #dead-line-picker {
   width: 20em
+}
+
+.vote-symbol {
+  font-size: xx-large;
+  color: rgba(255, 70, 70, 0.85);
 }

@@ -7,7 +7,7 @@
     .duel-option.col-md-6
       = render 'artists/artist', artist: @duel.artist_b
 
-  .voting-section.row
+  .voting-section.row.row-eq-height
     = render 'votes/result', artist: @duel.artist_a
     .vs-container
       .vs='VS'
