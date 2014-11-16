@@ -11,8 +11,8 @@
         %ul.nav.navbar-nav.navbar-left
           = render 'shared/user_links'
 
-          / - if current_user.admin?
-          /   = render 'shared/admin_links'
+          - if current_user.admin?
+            = render 'shared/admin_links'
 
         %ul.nav.navbar-nav
           %li
