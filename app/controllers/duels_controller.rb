@@ -10,11 +10,12 @@ class DuelsController < ApplicationController
   end
 
   def show
+    render 'result' if Vote.already_voted?(current_user, @duel)
   end
 
   def latest
     @duel = Duel.last
-    render action: 'show'
+    redirect_to @duel
   end
 
   def new
@@ -39,7 +40,7 @@ class DuelsController < ApplicationController
       redirect_to @duel, notice: 'Duel was successfully created.'
     else
       render action: 'new'
-      
+
     end
   end
 

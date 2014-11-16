@@ -1,0 +1,14 @@
+%section.duel_container
+  .duel-header
+    %h2 #{@duel.description}
+  .duel_options.row
+    .duel-option.col-md-6
+      = render 'artists/artist', artist: @duel.artist_a
+    .duel-option.col-md-6
+      = render 'artists/artist', artist: @duel.artist_b
+
+  .voting-section.row
+    = render 'votes/result', artist: @duel.artist_a
+    .vs-container
+      .vs='VS'
+    = render 'votes/result', artist: @duel.artist_b

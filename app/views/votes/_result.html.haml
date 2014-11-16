@@ -1,0 +1,10 @@
+.vote.col-md-6.purple
+  %h3 #{artist.name}
+  - if Vote.for_duel(@duel).for_artist(artist).pluck(:user_id).include? session[:user_id]
+    %span.glyphicon.glyphicon-heart
+  - else
+    %span.glyphicon.glyphicon-heart-empty
+  .voters
+    - Vote.for_duel(@duel).for_artist(artist).each do |vote|
+      - voter = vote.user
+      = image_tag voter.image, {title: voter.name}
