@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+user_role = Role.find_or_initialize_by(name: 'user', title: 'role for user', description: 'user')
+user_role.update_attributes(the_role: {votes: true, duels: {show: true}, artists: {show: true}})
