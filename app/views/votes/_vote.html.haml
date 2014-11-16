@@ -2,4 +2,4 @@
   %h3 #{artist.name}
   .vote-button
     = link_to duel_votes_path({action: :create, duel_id: @duel.id, artist_id: artist.id, user_id: session[:user_id]}), method: :post do
-      %span.glyphicon.glyphicon-heart-empty
+      %span.glyphicon.glyphicon-heart-empty.vote-symbol
