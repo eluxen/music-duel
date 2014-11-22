@@ -77,4 +77,6 @@ MusicDuel::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+  ENV['GOOGLE_CLIENT_ID'] = '645027121840-riufar2bhdvmq5j3ifkfebom649uvrpt.apps.googleusercontent.com'
+  ENV['GOOGLE_CLIENT_SECRET'] = 'oF7aIUNA-z8Wl4U0d3ZVpMvY'
 end

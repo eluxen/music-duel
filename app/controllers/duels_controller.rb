@@ -1,7 +1,7 @@
 class DuelsController < ApplicationController
   before_action :set_duel, only: [:show, :edit, :update, :destroy]
   before_action :login_required
-  before_action :role_required,  except: [:show]
+  before_action :role_required,  except: [:show, :latest]
 
   autocomplete :artist, :name, full: true
 
