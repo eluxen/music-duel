@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
     if user.save
       session[:user_id] = user.id
-      redirect_to duels_path, notice: "Signed in!"
+      redirect_to duels_path
     elsif user.not_invited?
       redirect_to login_path, :alert => "You are not invited!"
     else

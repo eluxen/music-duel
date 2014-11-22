@@ -17,12 +17,8 @@
     width: 10%;
 
     .vs {
-      position: relative;
-      line-height: 2.5em;
-      margin: auto auto;
+      line-height: 2.6em;
       text-align: center;
-      width: 5em;
-      height: 100%;
       font-size: 3em;
       color: white;
       background-color: rgba(100, 100, 100, 0.9);
@@ -40,7 +36,8 @@
     color: white;
 
     .vote-button {
-      margin-top: 2em;
+      margin-top: 0.5em;
+      padding-bottom: 1.5em;
       span{
         color: white;
         font-size: 2em;
