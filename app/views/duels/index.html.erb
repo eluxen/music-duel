@@ -1,6 +1,6 @@
-<h1>Listing duels</h1>
+<h1 class='text-center'>Listing duels</h1>
 
-<table>
+<table class='table table-hover center' style='width: 80%'>
   <thead>
     <tr>
       <th>Deadline</th>
@@ -9,7 +9,7 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class='table-striped'>
     <% @duels.each do |duel| %>
       <tr>
         <td><%= duel.deadline %></td>
@@ -25,7 +25,10 @@
 </table>
 
 <br>
-
-<%= add_button_link_to 'New Duel', new_duel_path %>
-<%= button_link_to 'Manage Artists', artists_path %>
+<div class='row'>
+  <div class='col-lg-offset-1 col-lg-5'>
+    <%= add_button_link_to 'New Duel', new_duel_path %>
+    <%= button_link_to 'Manage Artists', artists_path %>
+  </div>
+</div>
 

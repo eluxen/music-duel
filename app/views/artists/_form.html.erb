@@ -1,29 +1,37 @@
-<%= form_for(@artist) do |f| %>
-  <% if @artist.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@artist.errors.count, "error") %> prohibited this artist from being saved:</h2>
+<%= form_for(@artist, html: {class:'form-horizontal', role:"form"}) do |f| %>
+<% if @artist.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@artist.errors.count, "error") %> prohibited this artist from being saved:</h2>
 
-      <ul>
-      <% @artist.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% @artist.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+<div class="field form-group">
+  <%= f.label :name, {class: 'col-sm-5 control-label'} %>
+  <div class='col-sm-3'>
+    <%= f.text_field :name, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :song_url %><br>
-    <%= f.text_field :default_song_url %>
+</div>
+<div class="field form-group">
+  <%= f.label :song_url, {class: 'col-sm-5 control-label'} %>
+  <div class='col-sm-3'>
+    <%= f.text_field :default_song_url, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :tag_list, "Tags (separated by commas)" %><br>
-    <%= f.autocomplete_field :tag_list, autocomplete_tag_name_artists_path, 'data-delimiter' => ',', :data => { :no_matches_label => '' } %>
+</div>
+<div class="field form-group">
+  <%= f.label :tag_list, "Tags (separated by commas)", {class: 'col-sm-5 control-label'} %>
+  <div class='col-sm-3'>
+    <%= f.autocomplete_field :tag_list, autocomplete_tag_name_artists_path, 'data-delimiter' => ',', :data => { :no_matches_label => '' }, class: 'form-control' %>
   </div>
-  <div class="actions">
+</div>
+<div class="col-sm-offset-5 col-sm-2">
+  <div class="actions form-group" style='margin-left: 0'>
     <%= button_submit_tag %>
   </div>
+</div>
 <% end %>
