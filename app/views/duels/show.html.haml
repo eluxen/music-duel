@@ -1,14 +1,16 @@
 %section.duel_container
+  .options-container
+    .duel_options.row
+      .duel-option.col-md-6
+        = render 'artists/artist', artist: @duel.artist_a
+      .duel-option.col-md-6
+        = render 'artists/artist', artist: @duel.artist_b
+      .vs-container
+        .vs='VS'
+      .voting-container
+        .voting-section.row
+          = render 'votes/vote', artist: @duel.artist_a
+          = render 'votes/vote', artist: @duel.artist_b
+
   .duel-header
     %h2 #{@duel.description}
-  .duel_options.row
-    .duel-option.col-md-6
-      = render 'artists/artist', artist: @duel.artist_a
-    .duel-option.col-md-6
-      = render 'artists/artist', artist: @duel.artist_b
-
-  .voting-section.row
-    = render 'votes/vote', artist: @duel.artist_a
-    .vs-container
-      .vs='VS'
-    = render 'votes/vote', artist: @duel.artist_b

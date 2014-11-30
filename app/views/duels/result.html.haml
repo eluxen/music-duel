@@ -1,14 +1,25 @@
 %section.duel_container
-  .duel-header
-    %h2 #{@duel.description}
-  .duel_options.row
-    .duel-option.col-md-6
-      = render 'artists/artist', artist: @duel.artist_a
-    .duel-option.col-md-6
-      = render 'artists/artist', artist: @duel.artist_b
+  .options-container
+    .duel_options.row
+      .duel-option.col-md-6
+        = render 'artists/artist', artist: @duel.artist_a
+      .duel-option.col-md-6
+        = render 'artists/artist', artist: @duel.artist_b
 
-  .voting-section.row.row-eq-height
-    = render 'votes/result', artist: @duel.artist_a
-    .vs-container
-      #vs.vs='VS'
-    = render 'votes/result', artist: @duel.artist_b
+      .vs-container
+        #vs.vs='VS'
+      .voting-container
+        .voting-section.row
+          = render 'votes/result', artist: @duel.artist_a
+          = render 'votes/result', artist: @duel.artist_b
+
+  .duel-header.row
+    - duel_votes = Vote.for_duel(@duel)
+    .voters.col-md-6
+      - duel_votes.for_artist(@duel.artist_a).each do |vote|
+        - voter = vote.user
+        = image_tag voter.image, {title: voter.name}
+    .voters.col-md-6
+      - duel_votes.for_artist(@duel.artist_b).each do |vote|
+        - voter = vote.user
+        = image_tag voter.image, {title: voter.name}

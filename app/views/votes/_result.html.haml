@@ -1,12 +1,10 @@
 .vote.col-md-6.purple
   - duel_votes = Vote.for_duel(@duel)
-  %h3 #{artist.name}
-  %h3 #{(duel_votes.for_artist(artist).count.to_f / duel_votes.count.to_f * 100).round} %
-  - if duel_votes.for_artist(artist).pluck(:user_id).include? session[:user_id]
-    %span.glyphicon.glyphicon-heart.vote-symbol
-  - else
-    %span.glyphicon.glyphicon-heart-empty.vote-symbol
-  .voters
-    - duel_votes.for_artist(artist).each do |vote|
-      - voter = vote.user
-      = image_tag voter.image, {title: voter.name}
+  %h3
+    #{artist.name}
+    #{(duel_votes.for_artist(artist).count.to_f / duel_votes.count.to_f * 100).round} %
+  .vote-button
+    - if duel_votes.for_artist(artist).pluck(:user_id).include? session[:user_id]
+      %span.glyphicon.glyphicon-heart.vote-symbol
+    - else
+      %span.glyphicon.glyphicon-heart-empty.vote-symbol
