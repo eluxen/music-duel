@@ -5,7 +5,9 @@
         = render 'artists/artist', artist: @duel.artist_a
       .duel-option.col-md-6
         = render 'artists/artist', artist: @duel.artist_b
-
+      .deadline-container
+        .deadline
+          %h3 #{@duel.deadline}
       .vs-container
         #vs.vs='VS'
       .voting-container

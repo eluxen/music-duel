@@ -9,23 +9,19 @@
     - if current_user
       .navbar-collapse.collapse{style: "height: 1px;"}
         %ul.nav.navbar-nav.navbar-left
-          %li
-            = image_tag 'logo.png', :size => "103x103"
+          %li.logo
+            = image_tag 'logo.png', :size => "95x95"
 
           = render 'shared/user_links'
 
           - if current_user.admin?
             = render 'shared/admin_links'
 
-        %ul.nav.navbar-nav
-          %li
-            %h1= '00:53'
-
         %ul.nav.navbar-nav.navbar-right
-          %li.grey
+          %li.nav-element
             = link_to logout_path do
               %i.fa.fa-sign-out.fa-3x
               %p Sign Out
-          %li.grey
+          %li.nav-element
             %div
               = image_tag current_user.image || "http://lorempixel.com/100/100/cats/", :size => "73x73", :class => "img-rounded"
