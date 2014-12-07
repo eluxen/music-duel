@@ -16,3 +16,4 @@
 /tmp
 .env.development
 .env.prod
+app/assets/.DS_Store
