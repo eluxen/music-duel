@@ -26,7 +26,6 @@ body {
   text-align: center;
   background-color: transparent;
   font-family: NeoSansStd-Regular;
-  color: #777777;
 }
 
 .signin-button {
@@ -48,4 +47,14 @@ body {
 }
 .main-section {
   margin-top: 7.35em;
+}
+
+.table tbody tr:hover td,
+.table tbody tr:hover th {
+  background-color: transparent;
+}
+
+
+.table-striped tbody tr:nth-child(odd):hover td {
+   background-color: #F9F9F9;
 }

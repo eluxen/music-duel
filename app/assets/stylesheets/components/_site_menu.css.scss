@@ -31,14 +31,14 @@
   .grey {
     margin: 0 5px;
     text-align: center;
-    background-color: rgba(100, 100, 100, 0.81);
+    background-color: white;
 
      a {
-      color: white;
+      color: $purple;
     }
 
     &.open > a {
-      background-color: rgba(100, 100, 100, 0.81);
+      background-color: white;
     }
   }
 
