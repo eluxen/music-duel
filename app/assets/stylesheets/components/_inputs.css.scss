@@ -13,7 +13,7 @@ input[type="time"],
 input[type="url"],
 textarea {
   font-size: $secondary-font-size;
-  color: $text-color;
+  color: black;
 }
 
 input[disabled], input[readonly]{
@@ -22,4 +22,8 @@ input[disabled], input[readonly]{
 label {
   font-size: $secondary-font-size;
   color: $text-color;
+}
+
+a {
+  color: white;
 }

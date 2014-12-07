@@ -7,7 +7,6 @@
         = render 'artists/artist', artist: @duel.artist_b
       .deadline-container
         .deadline
-          %h3 #{@duel.deadline}
       .vs-container
         .vs='VS'
       .voting-container
@@ -17,3 +16,4 @@
 
   .duel-header
     %h2 #{@duel.description}
+= render 'countdown'
