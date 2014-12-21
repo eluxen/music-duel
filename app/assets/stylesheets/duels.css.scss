@@ -16,7 +16,7 @@
   }
   .deadline-container {
     position: absolute;
-    z-index: 9999;
+    z-index: 2;
     top: 2px;
     left: 45%;
     width: 10%;
@@ -31,7 +31,7 @@
   }
   .vs-container {
     position: absolute;
-    z-index: 9999;
+    z-index: 4;
     height: 108px;
     bottom: 108px;
     left: 45%;
@@ -50,7 +50,7 @@
     position: absolute;
     bottom: 0;
     width:100%;
-    z-index: 9000;
+    z-index: 3;
     height: 108px;
   }
   .voting-section{
