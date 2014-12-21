@@ -1,6 +1,6 @@
 GIT
-  remote: git://github.com/johnrees/css3buttons_rails_helpers.git
-  revision: e88e8353006c1d9fcd077a06c9cff43d032baf01
+  remote: git://github.com/EnriqueVidal/css3buttons_rails_helpers.git
+  revision: 2a45b2846d863219c78c9f207b8c7f6c645ebc9c
   specs:
     css3buttons (1.0.1)
       actionpack (>= 3.0.0)
