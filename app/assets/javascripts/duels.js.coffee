@@ -1,6 +1,6 @@
 
  $(document).ready ->
-                $('#dead-line-picker').datetimepicker(
+                $('#deadline-picker').datetimepicker(
                   todayHighlight: true,
                   useSeconds: false,
                   showTimePicker: true,

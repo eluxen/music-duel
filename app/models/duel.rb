@@ -31,4 +31,8 @@ class Duel < ActiveRecord::Base
   def artist_b_voters
     votes.where(artist_id: artist_b.id)
   end
+
+  def formated_deadline
+    deadline ? deadline.strftime('%d/%m/%Y %H:%M') : DateTime.now.strftime('%d/%m/%Y %H:%M')
+  end
 end

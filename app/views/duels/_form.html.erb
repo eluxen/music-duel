@@ -14,8 +14,8 @@
 <div class="field form-group">
   <%= f.label :deadline, {class: 'col-sm-5 control-label'} %>
   <div class='col-sm-3'>
-    <div class='input-group date' id='dead-line-picker' data-date-format= "DD/MM/YYYY HH:mm">
-     <%= f.text_field(:deadline, {class: "form-control"}) %>
+    <div class='input-group date' id='deadline-picker' data-date-format= "DD/MM/YYYY HH:mm">
+      <%= f.text_field :deadline, {value: "#{@duel.formated_deadline}", class: "form-control"} %>
      <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
    </span>
  </div>
