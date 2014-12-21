@@ -5,7 +5,8 @@
         = render 'artists/artist', artist: @duel.artist_a
       .duel-option.col-md-6
         = render 'artists/artist', artist: @duel.artist_b
-
+      .deadline-container
+        .deadline
       .vs-container
         #vs.vs='VS'
       .voting-container
@@ -23,3 +24,4 @@
       - duel_votes.for_artist(@duel.artist_b).each do |vote|
         - voter = vote.user
         = image_tag voter.image, {title: voter.name}
+= render 'countdown'

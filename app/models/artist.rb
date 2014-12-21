@@ -13,7 +13,7 @@ class Artist < ActiveRecord::Base
   before_save :set_youtube_id
 
   def defualt_embedded_song_url
-    "http://www.youtube.com/embed/#{youtube_id}?rel=0&showinfo=0&controls=0"
+    "https://www.youtube.com/embed/#{youtube_id}?rel=0&showinfo=0&controls=0"
   end
 
   def default_song_url
