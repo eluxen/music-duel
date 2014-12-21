@@ -21,7 +21,7 @@ gem 'haml'
 gem 'font-awesome-rails'
 gem 'haml-rails'
 gem 'the_role', :github => 'the-teacher/the_role'
-gem 'css3buttons'
+gem 'css3buttons', :git => 'git://github.com/johnrees/css3buttons_rails_helpers.git'
 
 group :production do
   gem 'pg'

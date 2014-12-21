@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/johnrees/css3buttons_rails_helpers.git
+  revision: e88e8353006c1d9fcd077a06c9cff43d032baf01
+  specs:
+    css3buttons (1.0.1)
+      actionpack (>= 3.0.0)
+
+GIT
   remote: git://github.com/the-teacher/the_role.git
   revision: 644205fcd341f849a23c3a7eb7cd8d1dae6fc9c5
   specs:
@@ -55,8 +62,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
-    css3buttons (1.0.1)
-      actionpack (>= 3.0.0)
     dotenv (0.11.1)
       dotenv-deployment (~> 0.0.2)
     dotenv-deployment (0.0.2)
@@ -215,7 +220,7 @@ DEPENDENCIES
   bootstrap-sass
   bootstrap3-datetimepicker-rails
   coffee-rails (~> 4.0.0)
-  css3buttons
+  css3buttons!
   dotenv-rails
   font-awesome-rails
   google-api-client
