@@ -5,6 +5,6 @@
                     useSeconds: false,
                     showTimePicker: true,
                     sideBySide: true,
-                    autoFocus: true
+                    autoFocus: false
                 )
               
