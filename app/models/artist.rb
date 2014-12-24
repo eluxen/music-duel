@@ -17,7 +17,7 @@ class Artist < ActiveRecord::Base
   end
 
   def default_song_url
-    "https://www.youtube.com/watch?v=#{youtube_id}"
+    "https://www.youtube.com/watch?v=#{youtube_id}" if youtube_id
   end
 
   def set_youtube_id
