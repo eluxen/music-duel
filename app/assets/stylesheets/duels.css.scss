@@ -46,6 +46,7 @@
     }
   }
   .voting-container{
+    pointer-events: none;
     position: absolute;
     bottom: 0;
     width:100%;
@@ -90,6 +91,7 @@
 }
 
 .vote-symbol {
+  pointer-events: auto;
   font-weight: lighter;
   font-size: xx-large;
   color: rgba(255, 70, 70, 0.85);
