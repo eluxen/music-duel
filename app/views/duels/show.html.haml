@@ -9,10 +9,10 @@
         .deadline
       .vs-container
         .vs='VS'
-    .voting-container
-      .voting-section.row
-        = render 'votes/vote', artist: @duel.artist_a
-        = render 'votes/vote', artist: @duel.artist_b
+      .voting-container
+        .voting-section.row
+          = render 'votes/vote', artist: @duel.artist_a
+          = render 'votes/vote', artist: @duel.artist_b
 
   .duel-header
     %h2 #{@duel.description}

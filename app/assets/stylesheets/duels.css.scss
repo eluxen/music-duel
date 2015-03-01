@@ -32,22 +32,21 @@
   .vs-container {
     position: absolute;
     z-index: 4;
-    height: 103px;
-    bottom: 143px;
+    bottom: 85px;
     left: 45%;
     width: 10%;
 
     .vs {
-      line-height: 2.6em;
+      line-height: 2.35em;
       text-align: center;
       font-size: 3em;
       color: white;
-      background: rgba(0, 0, 0, 0.5);
     }
   }
   .voting-container{
+    pointer-events: none;
     position: absolute;
-    bottom: 40px;
+    bottom: 85px;
     width:100%;
     z-index: 3;
   }
@@ -63,12 +62,12 @@
     text-align: center;
     color: white;
     > h3 {
-      margin-top: 15px;
+      margin-top: 20px;
       margin-bottom: 10px;
     }
 
     .vote-button {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
 
       span{
         color: white;
@@ -89,6 +88,7 @@
 }
 
 .vote-symbol {
+  pointer-events: auto;
   font-weight: lighter;
   font-size: xx-large;
   color: rgba(255, 70, 70, 0.85);
