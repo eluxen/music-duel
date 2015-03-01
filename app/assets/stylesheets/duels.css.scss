@@ -32,8 +32,8 @@
   .vs-container {
     position: absolute;
     z-index: 4;
-    height: 108px;
-    bottom: 108px;
+    height: 103px;
+    bottom: 143px;
     left: 45%;
     width: 10%;
 
@@ -46,15 +46,10 @@
     }
   }
   .voting-container{
-    pointer-events: none;
     position: absolute;
-    bottom: 0;
+    bottom: 40px;
     width:100%;
     z-index: 3;
-    height: 108px;
-  }
-  .voting-section{
-
   }
   .row-eq-height {
     display: -webkit-box;
@@ -67,15 +62,18 @@
     background: rgba(0, 0, 0, 0.5);
     text-align: center;
     color: white;
+    > h3 {
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
 
     .vote-button {
-      margin-top: 0.5em;
-      padding-bottom: 1.5em;
+      margin-bottom: 15px;
+
       span{
         color: white;
         font-size: 2em;
       }
-
     }
   }
   .voters {
@@ -91,7 +89,6 @@
 }
 
 .vote-symbol {
-  pointer-events: auto;
   font-weight: lighter;
   font-size: xx-large;
   color: rgba(255, 70, 70, 0.85);
