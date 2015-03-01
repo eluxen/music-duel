@@ -30,9 +30,10 @@
     }
   }
   .vs-container {
+    pointer-events: none;
     position: absolute;
     z-index: 4;
-    bottom: 85px;
+    bottom: 40px;
     left: 45%;
     width: 10%;
 
@@ -46,7 +47,7 @@
   .voting-container{
     pointer-events: none;
     position: absolute;
-    bottom: 85px;
+    bottom: 0;
     width:100%;
     z-index: 3;
   }
@@ -59,10 +60,11 @@
 
   .vote {
     background: rgba(0, 0, 0, 0.5);
+    height: 130px;
     text-align: center;
     color: white;
     > h3 {
-      margin-top: 20px;
+      margin-top: 15px;
       margin-bottom: 10px;
     }
 
@@ -99,4 +101,7 @@
   a {
     color: blue;
   }
+}
+
+.voting-section{
 }
