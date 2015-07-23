@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   def create
+    binding.pry
     user = User.from_auth(omnihash) || User.create_from_auth(omnihash)
 
     if user.save

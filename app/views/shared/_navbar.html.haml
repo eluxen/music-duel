@@ -24,4 +24,4 @@
               %p Sign Out
           %li.nav-element
             %div
-              = image_tag current_user.image || "http://lorempixel.com/100/100/cats/", :size => "73x73", :class => "img-rounded"
+              = image_tag current_user.gravatar_image_url, :size => "73x73", :class => "img-rounded"

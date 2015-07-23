@@ -19,9 +19,9 @@
     .voters.col-md-6
       - duel_votes.for_artist(@duel.artist_a).each do |vote|
         - voter = vote.user
-        = image_tag voter.image, {title: voter.name}
+        = image_tag voter.gravatar_image_url, {title: voter.name}
     .voters.col-md-6
       - duel_votes.for_artist(@duel.artist_b).each do |vote|
         - voter = vote.user
-        = image_tag voter.image, {title: voter.name}
+        = image_tag voter.gravatar_image_url, {title: voter.name}
 = render 'countdown'
