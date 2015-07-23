@@ -26,9 +26,10 @@ class User < ActiveRecord::Base
   end
 
   def gravatar_image_url
+    return image unless image.ends_with('.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/s100/photo.jpg?sz=50')
     hash = Digest::MD5.hexdigest(email)
 
-    "http://www.gravatar.com/avatar/#{hash}"
+    "http://www.gravatar.com/avatar/#{hash}?s=100"
   end
 
   private 
